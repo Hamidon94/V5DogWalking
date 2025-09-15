@@ -1,0 +1,130 @@
+@import './components/ui/animations.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 13% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 13% 18%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --accent: 200 98% 39%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 142 76% 36%;
+
+    /* Dog Walking Theme Colors */
+    --sage-green: 142 76% 36%;
+    --sage-green-light: 142 76% 90%;
+    --ocean-blue: 200 98% 39%;
+    --ocean-blue-light: 200 98% 90%;
+    --warm-beige: 45 29% 97%;
+    --earthy-brown: 30 20% 25%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--sage-green)), hsl(var(--ocean-blue)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--sage-green)) 0%, hsl(var(--ocean-blue)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(var(--warm-beige)) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(var(--sage-green) / 0.1);
+    --shadow-card: 0 8px 30px -6px hsl(var(--sage-green) / 0.15);
+    --shadow-button: 0 4px 15px -3px hsl(var(--sage-green) / 0.3);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 27% 8%;
+    --foreground: 220 14% 96%;
+
+    --card: 220 27% 8%;
+    --card-foreground: 220 14% 96%;
+
+    --popover: 220 27% 8%;
+    --popover-foreground: 220 14% 96%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 27% 12%;
+    --secondary-foreground: 220 14% 96%;
+
+    --muted: 220 27% 12%;
+    --muted-foreground: 220 8.9% 56.1%;
+
+    --accent: 200 98% 39%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 220 14% 96%;
+
+    --border: 220 27% 12%;
+    --input: 220 27% 12%;
+    --ring: 142 76% 36%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--sage-green)), hsl(var(--ocean-blue)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--sage-green)) 0%, hsl(var(--ocean-blue)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(220 27% 10%) 100%);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
