@@ -35,7 +35,7 @@ export const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -50,7 +50,7 @@ export const FeaturesSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <Card 
               key={index} 

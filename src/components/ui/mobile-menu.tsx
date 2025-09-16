@@ -28,9 +28,9 @@ export const MobileMenu = () => {
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 md:hidden">
-          <div className="fixed inset-0 bg-black/50" onClick={toggleMenu} />
-          <div className="fixed top-0 right-0 h-full w-64 bg-background border-l shadow-lg">
+        <div className="fixed inset-0 z-[60] md:hidden">
+          <div className="fixed inset-0 bg-black/60" onClick={toggleMenu} />
+          <div className="fixed top-0 right-0 h-full w-80 bg-background border-l shadow-2xl">
             <div className="flex items-center justify-between p-4 border-b">
               <div className="flex items-center gap-2">
                 <div className="text-xl">🐕</div>
@@ -43,22 +43,23 @@ export const MobileMenu = () => {
               </Button>
             </div>
             
-            <nav className="p-4 space-y-4">
+            <nav className="p-6 space-y-6">
               {menuItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
+                  className="block py-3 px-2 text-lg font-medium text-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-200"
                   onClick={toggleMenu}
                 >
                   {item.label}
                 </a>
               ))}
               
-              <div className="pt-4 border-t space-y-3">
+              <div className="pt-6 border-t space-y-4">
                 <Button 
                   variant="ghost" 
-                  className="w-full justify-start" 
+                  size="lg"
+                  className="w-full justify-center text-lg" 
                   onClick={() => {
                     window.location.href = '/auth';
                     toggleMenu();
@@ -68,7 +69,8 @@ export const MobileMenu = () => {
                 </Button>
                 <Button 
                   variant="hero" 
-                  className="w-full" 
+                  size="lg"
+                  className="w-full text-lg" 
                   onClick={() => {
                     window.location.href = '/auth';
                     toggleMenu();
