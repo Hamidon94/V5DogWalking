@@ -36,6 +36,10 @@ import Blog from "./pages/Blog";
 import Partners from "./pages/Partners";
 import Careers from "./pages/Careers";
 import CookiesPolicy from "./pages/CookiesPolicy";
+import Search from "./pages/Search";
+import Priority from "./pages/Priority";
+import Services from "./pages/Services";
+import Help from "./pages/Help";
 
 const queryClient = new QueryClient();
 
@@ -77,6 +81,10 @@ const App = () => (
           <Route path="/partners" element={<Partners />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/cookies" element={<CookiesPolicy />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/priority" element={<Priority />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/help" element={<Help />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -12,18 +12,24 @@ export const Header = () => {
           </span>
         </div>
         
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#comment-ca-marche" className="text-sm hover:text-primary transition-colors">
-            Comment ça marche
+        <nav className="hidden md:flex items-center gap-6">
+          <a href="/search" className="text-sm hover:text-primary transition-colors">
+            Rechercher
           </a>
-          <a href="#tarifs" className="text-sm hover:text-primary transition-colors">
-            Tarifs
+          <a href="/walker/register" className="text-sm hover:text-primary transition-colors">
+            Devenir Promeneur
           </a>
-          <a href="#promeneurs" className="text-sm hover:text-primary transition-colors">
-            Nos promeneurs
+          <a href="/priority" className="text-sm hover:text-primary transition-colors">
+            Être prioritaire
           </a>
-          <a href="#contact" className="text-sm hover:text-primary transition-colors">
-            Contact
+          <a href="/services" className="text-sm hover:text-primary transition-colors">
+            Services
+          </a>
+          <a href="/blog" className="text-sm hover:text-primary transition-colors">
+            Blog
+          </a>
+          <a href="/help" className="text-sm hover:text-primary transition-colors">
+            Aide
           </a>
         </nav>
         

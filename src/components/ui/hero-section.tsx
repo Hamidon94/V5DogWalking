@@ -17,10 +17,11 @@ export const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up">
-            Votre chien mérite la{" "}
+            Trouvez le Promeneur{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent gradient-animate">
-              meilleure promenade
+              Certifié Idéal
             </span>
+            {" "}pour Votre Compagnon
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
@@ -28,11 +29,41 @@ export const HeroSection = () => {
             l'exercice et l'attention qu'il mérite.
           </p>
           
+          {/* Formulaire de recherche rapide */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 mb-8 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <select className="bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70">
+                <option value="">Type d'animal</option>
+                <option value="chien">Chien</option>
+                <option value="chat">Chat</option>
+              </select>
+              <select className="bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70">
+                <option value="">Service</option>
+                <option value="promenade">Promenade</option>
+                <option value="visite">Visite simple</option>
+                <option value="garde">Garde à domicile</option>
+              </select>
+              <input 
+                type="text" 
+                placeholder="Votre adresse" 
+                className="bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70"
+              />
+            </div>
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="w-full mt-4 text-lg px-8 py-4 h-auto"
+              onClick={() => window.location.href = '/search'}
+            >
+              Rechercher des promeneurs
+            </Button>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <Button variant="hero" size="lg" className="text-lg px-8 py-4 h-auto" onClick={() => window.location.href = '/auth'}>
               Réserver une promenade
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto bg-white/10 border-white/30 text-white hover:bg-white/20" onClick={() => window.location.href = '/auth'}>
+            <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto bg-white/10 border-white/30 text-white hover:bg-white/20" onClick={() => window.location.href = '/walker/register'}>
               Devenir promeneur
             </Button>
           </div>

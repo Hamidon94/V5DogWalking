@@ -10,6 +10,7 @@ import { TestimonialsSection } from "@/components/ui/testimonials-section";
 import { FaqSection } from "@/components/ui/faq-section";
 import { UserTypesSection } from "@/components/ui/user-types-section";
 import { ContactSection } from "@/components/ui/contact-section";
+import { DogWalkingProtectSection } from "@/components/ui/dogwalking-protect-section";
 import { Footer } from "@/components/ui/footer";
 import { FloatingActionButton } from "@/components/ui/floating-action-button";
 
@@ -22,6 +23,7 @@ const Index = () => {
         <HeroSection />
         <StatsSection />
         <FeaturesSection />
+        <DogWalkingProtectSection />
         <HowItWorksSection />
         <PricingSection />
         <FeaturedWalkersSection />

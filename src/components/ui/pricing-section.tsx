@@ -3,54 +3,104 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Check } from "lucide-react";
 
 export const PricingSection = () => {
-  const plans = [
+  const services = [
     {
-      name: "Promenade Express",
-      duration: "30 minutes",
-      price: "15",
-      description: "Parfait pour une sortie rapide",
+      name: "Promenade",
+      duration: "30 min",
+      price: "7",
+      description: "Promenade classique pour votre chien",
       features: [
-        "Promenade de 30 minutes",
-        "Suivi GPS en temps réel",
-        "Photos de la promenade",
-        "Rapport de sortie",
-        "Support client"
-      ],
-      popular: false,
-      variant: "outline" as const
-    },
-    {
-      name: "Promenade Standard",
-      duration: "1 heure",
-      price: "25",
-      description: "Le choix le plus populaire",
-      features: [
-        "Promenade d'1 heure",
-        "Suivi GPS en temps réel",
-        "Photos et vidéos",
-        "Rapport détaillé",
-        "Jeux et socialisation",
-        "Support prioritaire"
+        "Promenade en laisse",
+        "Exercice adapté",
+        "Rapport de promenade",
+        "Photos pendant la sortie"
       ],
       popular: true,
       variant: "hero" as const
     },
     {
-      name: "Promenade Premium",
-      duration: "1h30",
-      price: "35",
-      description: "Pour les chiens les plus actifs",
+      name: "Promenade",
+      duration: "1 heure",
+      price: "13",
+      description: "Promenade longue durée",
       features: [
-        "Promenade d'1h30",
-        "Suivi GPS en temps réel",
-        "Photos et vidéos HD",
-        "Rapport complet",
-        "Jeux et exercices",
-        "Brossage inclus",
-        "Support VIP 24/7"
+        "Promenade d'1 heure",
+        "Exercice et jeux",
+        "Rapport détaillé",
+        "Photos et vidéos"
+      ],
+      popular: false,
+      variant: "outline" as const
+    },
+    {
+      name: "Visite simple",
+      duration: "30 min",
+      price: "19",
+      description: "Visite à domicile pour compagnie",
+      features: [
+        "Compagnie pour votre animal",
+        "Vérification eau et nourriture",
+        "Jeux et câlins",
+        "Rapport de visite"
+      ],
+      popular: false,
+      variant: "outline" as const
+    },
+    {
+      name: "Visite sanitaire",
+      duration: "30 min",
+      price: "35",
+      description: "Soins d'hygiène et entretien",
+      features: [
+        "Brossage et entretien",
+        "Nettoyage yeux et oreilles",
+        "Vérification des pattes",
+        "Soins d'hygiène de base"
+      ],
+      popular: false,
+      variant: "outline" as const
+    },
+    {
+      name: "Garde à domicile",
+      duration: "24h",
+      price: "31",
+      description: "Garde de nuit à votre domicile",
+      features: [
+        "Présence toute la nuit",
+        "Maintien des habitudes",
+        "Sécurité de votre domicile",
+        "Soins et attention continue"
       ],
       popular: false,
       variant: "ocean" as const
+    },
+    {
+      name: "Pension canine",
+      duration: "24h",
+      price: "26",
+      description: "Hébergement chez le promeneur",
+      features: [
+        "Hébergement familial",
+        "Socialisation avec autres chiens",
+        "Activités et promenades",
+        "Environnement sécurisé"
+      ],
+      popular: false,
+      variant: "outline" as const
+    },
+    {
+      name: "Accompagnement vétérinaire",
+      duration: "Service complet",
+      price: "35",
+      description: "Transport et accompagnement chez le vétérinaire",
+      features: [
+        "Récupération à domicile",
+        "Transport sécurisé",
+        "Accompagnement chez le vétérinaire",
+        "Retour à domicile"
+      ],
+      popular: false,
+      variant: "outline" as const
     }
   ];
 
@@ -69,17 +119,17 @@ export const PricingSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {services.map((service, index) => (
             <Card 
               key={index} 
               className={`shadow-card hover:shadow-lg transition-all duration-300 border-0 relative ${
-                plan.popular 
+                service.popular 
                   ? 'bg-gradient-to-b from-sage/5 to-ocean/5 ring-2 ring-sage/20 scale-105' 
                   : 'bg-gradient-card'
               }`}
             >
-              {plan.popular && (
+              {service.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <div className="bg-gradient-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
                     Le plus populaire
@@ -88,17 +138,17 @@ export const PricingSection = () => {
               )}
               
               <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                <CardDescription className="text-base mb-4">{plan.description}</CardDescription>
+                <CardTitle className="text-2xl mb-2">{service.name}</CardTitle>
+                <CardDescription className="text-base mb-4">{service.description}</CardDescription>
                 <div className="mb-4">
-                  <span className="text-4xl font-bold">{plan.price}€</span>
-                  <span className="text-muted-foreground ml-1">/ {plan.duration}</span>
+                  <span className="text-4xl font-bold">{service.price}€</span>
+                  <span className="text-muted-foreground ml-1">/ {service.duration}</span>
                 </div>
               </CardHeader>
               
               <CardContent className="pt-0">
                 <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
+                  {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-sage mt-0.5 flex-shrink-0" />
                       <span className="text-sm">{feature}</span>
@@ -107,12 +157,12 @@ export const PricingSection = () => {
                 </ul>
                 
                 <Button 
-                  variant={plan.variant} 
+                  variant={service.variant} 
                   size="lg" 
                   className="w-full"
-                  onClick={() => window.location.href = '/auth'}
+                  onClick={() => window.location.href = '/services'}
                 >
-                  Choisir ce forfait
+                  Réserver ce service
                 </Button>
               </CardContent>
             </Card>
