@@ -30,8 +30,8 @@ export const HeroSection = () => {
           </p>
           
           {/* Formulaire de recherche rapide */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 mb-8 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 mb-8 max-w-4xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <select className="bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70">
                 <option value="">Type d'animal</option>
                 <option value="chien">Chien</option>
@@ -42,10 +42,28 @@ export const HeroSection = () => {
                 <option value="promenade">Promenade</option>
                 <option value="visite">Visite simple</option>
                 <option value="garde">Garde à domicile</option>
+                <option value="pension">Pension canine</option>
+                <option value="veterinaire">Accompagnement vétérinaire</option>
               </select>
               <input 
                 type="text" 
                 placeholder="Votre adresse" 
+                className="bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70"
+              />
+              <select className="bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70">
+                <option value="">Taille du chien</option>
+                <option value="petit">Petit (moins de 10kg)</option>
+                <option value="moyen">Moyen (10-25kg)</option>
+                <option value="grand">Grand (plus de 25kg)</option>
+              </select>
+              <input 
+                type="date" 
+                placeholder="Date souhaitée" 
+                className="bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70"
+              />
+              <input 
+                type="time" 
+                placeholder="Heure souhaitée" 
                 className="bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70"
               />
             </div>

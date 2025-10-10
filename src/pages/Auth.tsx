@@ -71,17 +71,24 @@ const Auth = () => {
     setLoading(true);
 
     try {
-      // Vérifier si c'est l'utilisateur de test
-      if (email === 'hamid.amine.rh@gmail.com' && password === 'Vendredi123') {
-        // Simuler une connexion réussie pour l'utilisateur de test
+      // Vérifier si c'est un utilisateur de test selon le cahier des charges
+      if ((email === 'proprietaire@dogwalking.fr' && password === 'proprietaire123') ||
+          (email === 'promeneur@dogwalking.fr' && password === 'promeneur123') ||
+          (email === 'hamid.amine.rh@gmail.com' && password === 'Vendredi123')) {
+        
+        // Simuler une connexion réussie pour les utilisateurs de test
         toast({
           title: "Connexion réussie",
           description: "Bienvenue ! Redirection vers le tableau de bord...",
         });
         
-        // Rediriger vers le dashboard après un court délai
+        // Rediriger selon le type d'utilisateur
         setTimeout(() => {
-          navigate('/dashboard');
+          if (email === 'promeneur@dogwalking.fr') {
+            navigate('/walker/dashboard');
+          } else {
+            navigate('/dashboard');
+          }
         }, 1500);
         return;
       }
