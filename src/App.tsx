@@ -41,6 +41,9 @@ import Priority from "./pages/Priority";
 import Services from "./pages/Services";
 import Help from "./pages/Help";
 import WalkTracking from "./pages/WalkTracking";
+import Messages from "./pages/Messages";
+import Notifications from "./pages/Notifications";
+import Referral from "./pages/Referral";
 
 const queryClient = new QueryClient();
 
@@ -87,6 +90,9 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/help" element={<Help />} />
           <Route path="/walk-tracking/:bookingId" element={<WalkTracking />} />
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/referral" element={<Referral />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

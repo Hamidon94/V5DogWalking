@@ -8,10 +8,12 @@ export const MobileMenu = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
-    { href: "#comment-ca-marche", label: "Comment ça marche" },
-    { href: "#tarifs", label: "Tarifs" },
-    { href: "#promeneurs", label: "Nos promeneurs" },
-    { href: "#contact", label: "Contact" }
+    { href: "/search", label: "Rechercher" },
+    { href: "/walker/register", label: "Devenir Promeneur" },
+    { href: "/priority", label: "Être prioritaire" },
+    { href: "/services", label: "Services" },
+    { href: "/blog", label: "Blog" },
+    { href: "/help", label: "Aide" }
   ];
 
   return (
@@ -45,14 +47,16 @@ export const MobileMenu = () => {
             
             <nav className="p-6 space-y-6">
               {menuItems.map((item) => (
-                <a
+                <button
                   key={item.href}
-                  href={item.href}
-                  className="block py-3 px-2 text-lg font-medium text-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-200"
-                  onClick={toggleMenu}
+                  className="block w-full text-left py-3 px-2 text-lg font-medium text-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-200"
+                  onClick={() => {
+                    window.location.href = item.href;
+                    toggleMenu();
+                  }}
                 >
                   {item.label}
-                </a>
+                </button>
               ))}
               
               <div className="pt-6 border-t space-y-4">
