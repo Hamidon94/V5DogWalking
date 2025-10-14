@@ -45,11 +45,42 @@ export const HeroSection = () => {
                 <option value="pension">Pension canine</option>
                 <option value="veterinaire">Accompagnement vétérinaire</option>
               </select>
-              <input 
-                type="text" 
-                placeholder="Votre adresse" 
-                className="bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70"
-              />
+              <div className="relative">
+                <input 
+                  type="text" 
+                  id="address-input"
+                  placeholder="Votre adresse" 
+                  className="bg-white/20 border border-white/30 rounded-lg px-4 py-3 pr-12 text-white placeholder-white/70 w-full"
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (navigator.geolocation) {
+                      navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                          const input = document.getElementById('address-input') as HTMLInputElement;
+                          if (input) {
+                            input.value = `${position.coords.latitude.toFixed(4)}, ${position.coords.longitude.toFixed(4)}`;
+                          }
+                        },
+                        (error) => {
+                          console.error('Erreur de géolocalisation:', error);
+                          alert('Impossible d\'obtenir votre position. Veuillez entrer votre adresse manuellement.');
+                        }
+                      );
+                    } else {
+                      alert('La géolocalisation n\'est pas supportée par votre navigateur.');
+                    }
+                  }}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 hover:bg-white/10 rounded-lg transition-colors"
+                  title="Utiliser ma position actuelle"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </button>
+              </div>
               <select className="bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70">
                 <option value="">Taille du chien</option>
                 <option value="petit">Petit (moins de 10kg)</option>

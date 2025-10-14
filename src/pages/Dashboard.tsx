@@ -9,6 +9,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { User, Session } from '@supabase/supabase-js';
 import { PlusCircle, Dog, MapPin, Calendar, LogOut, MessageCircle } from 'lucide-react';
 import { useDogs } from '@/hooks/useDogs';
+import { FavoritesList } from '@/components/favorites/FavoritesManager';
 
 const Dashboard = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -159,6 +160,17 @@ const Dashboard = () => {
               </p>
             </CardContent>
           </Card>
+        </div>
+
+        {/* Favorite Walkers Section */}
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-2xl font-semibold">Mes promeneurs favoris</h3>
+            <Button variant="outline" onClick={() => navigate('/walkers')}>
+              Découvrir des promeneurs
+            </Button>
+          </div>
+          <FavoritesList />
         </div>
 
         {/* My Dogs Section */}

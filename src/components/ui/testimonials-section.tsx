@@ -75,7 +75,7 @@ export const TestimonialsSection = () => {
         </div>
         
         <div className="text-center mt-12">
-          <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground">
+          <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground flex-wrap">
             <div className="flex items-center gap-2">
               <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
               <span className="font-semibold">4.9/5</span>
@@ -90,6 +90,26 @@ export const TestimonialsSection = () => {
             <div>
               <span className="font-semibold">50 000+</span>
               <span className="ml-1">promenades réalisées</span>
+            </div>
+          </div>
+          
+          {/* Intégration Trustpilot */}
+          <div className="mt-8 flex flex-col items-center gap-4">
+            <p className="text-sm text-muted-foreground">Noté Excellent sur Trustpilot</p>
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-lg px-6 py-3 shadow-sm">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-green-500 text-green-500" />
+                ))}
+              </div>
+              <span className="font-bold text-lg">4.8</span>
+              <span className="text-muted-foreground">|</span>
+              <span className="text-sm text-muted-foreground">2 347 avis</span>
+              <img 
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 126 31'%3E%3Cpath fill='%2300B67A' d='M0 0h126v31H0z'/%3E%3Cpath fill='%23FFF' d='M30.4 11.7h-7.6l-2.4-7.3-2.3 7.3h-7.6l6.1 4.5-2.3 7.3 6.1-4.5 6.1 4.5-2.3-7.3 6.2-4.5zm32.3 0h-7.6l-2.3-7.3-2.4 7.3h-7.6l6.2 4.5-2.4 7.3 6.2-4.5 6.1 4.5-2.3-7.3 6.1-4.5zm32.4 0h-7.6l-2.4-7.3-2.3 7.3h-7.6l6.1 4.5-2.3 7.3 6.1-4.5 6.1 4.5-2.3-7.3 6.2-4.5z'/%3E%3C/svg%3E" 
+                alt="Trustpilot" 
+                className="h-5 ml-2"
+              />
             </div>
           </div>
         </div>

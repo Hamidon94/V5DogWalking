@@ -346,7 +346,7 @@ const Auth = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
-                        minLength={6}
+                        minLength={8}
                       />
                       <Button
                         type="button"
@@ -363,8 +363,100 @@ const Auth = () => {
                       </Button>
                     </div>
                     <p className="text-xs text-muted-foreground mt-1">
-                      Au moins 6 caractères
+                      Au moins 8 caractères, avec majuscule, minuscule et chiffre
                     </p>
+                  </div>
+
+                  {/* Vérification d'identité obligatoire */}
+                  <div className="space-y-2">
+                    <Label htmlFor="identity-card" className="flex items-center gap-2">
+                      <span className="text-red-500">*</span>
+                      Carte d'identité (obligatoire)
+                    </Label>
+                    <Input
+                      id="identity-card"
+                      type="file"
+                      accept="image/*,.pdf"
+                      required
+                      className="cursor-pointer"
+                    />
+                    <p className="text-xs text-muted-foreground">
+                      Formats acceptés : JPG, PNG, PDF (max 5 Mo)
+                    </p>
+                  </div>
+
+                  {/* Casier judiciaire pour les promeneurs */}
+                  {userType === 'walker' && (
+                    <div className="space-y-2">
+                      <Label htmlFor="criminal-record" className="flex items-center gap-2">
+                        <span className="text-red-500">*</span>
+                        Casier judiciaire vierge B2 (obligatoire)
+                      </Label>
+                      <Input
+                        id="criminal-record"
+                        type="file"
+                        accept="image/*,.pdf"
+                        required
+                        className="cursor-pointer"
+                      />
+                      <p className="text-xs text-muted-foreground">
+                        Le casier judiciaire B2 doit être vierge et daté de moins de 3 mois
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Certificats optionnels pour les promeneurs */}
+                  {userType === 'walker' && (
+                    <div className="space-y-2">
+                      <Label htmlFor="certificates">
+                        Certificats ou formations (optionnel)
+                      </Label>
+                      <Input
+                        id="certificates"
+                        type="file"
+                        accept="image/*,.pdf"
+                        multiple
+                        className="cursor-pointer"
+                      />
+                      <p className="text-xs text-muted-foreground">
+                        Ajoutez vos certificats de formation (premiers secours, comportement animal, etc.)
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Accord de principe pour les propriétaires */}
+                  {userType === 'owner' && (
+                    <div className="flex items-start space-x-2 p-4 bg-muted/50 rounded-lg">
+                      <input
+                        type="checkbox"
+                        id="agreement"
+                        required
+                        className="mt-1"
+                      />
+                      <Label htmlFor="agreement" className="text-sm cursor-pointer">
+                        <span className="text-red-500">*</span> J'accepte l'accord de principe et je m'engage à respecter les conditions d'utilisation de la plateforme DogWalking. Je certifie être le propriétaire légitime de l'animal et autorise les promeneurs certifiés à s'occuper de mon compagnon.
+                      </Label>
+                    </div>
+                  )}
+
+                  {/* Conditions générales pour tous */}
+                  <div className="flex items-start space-x-2">
+                    <input
+                      type="checkbox"
+                      id="terms"
+                      required
+                      className="mt-1"
+                    />
+                    <Label htmlFor="terms" className="text-sm cursor-pointer">
+                      <span className="text-red-500">*</span> J'accepte les{' '}
+                      <a href="/terms-and-conditions" className="text-primary hover:underline" target="_blank">
+                        conditions générales d'utilisation
+                      </a>
+                      {' '}et la{' '}
+                      <a href="/privacy-policy" className="text-primary hover:underline" target="_blank">
+                        politique de confidentialité
+                      </a>
+                    </Label>
                   </div>
 
                   <Button type="submit" className="w-full" disabled={loading}>

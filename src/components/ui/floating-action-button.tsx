@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone, Calendar } from "lucide-react";
+import { MessageCircle, Calendar } from "lucide-react";
 
 export const FloatingActionButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,12 +32,6 @@ export const FloatingActionButton = () => {
       label: "Chat",
       action: () => window.location.href = '#contact',
       color: "bg-ocean hover:bg-ocean/90"
-    },
-    {
-      icon: Phone,
-      label: "Appeler",
-      action: () => window.location.href = 'tel:0123456789',
-      color: "bg-earthy hover:bg-earthy/90"
     }
   ];
 
