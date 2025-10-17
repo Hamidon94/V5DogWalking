@@ -29,8 +29,11 @@ export const MobileMenu = () => {
 
       {isOpen && (
         <div className="fixed inset-0 z-[9999] md:hidden">
+          {/* Overlay pour fermer le menu en cliquant à l'extérieur */}
           <div className="fixed inset-0 bg-black/60" onClick={toggleMenu} />
-          <div className="fixed top-0 right-0 h-full w-80 bg-white border-l shadow-2xl z-[10000]">
+          
+          {/* Le menu latéral lui-même */}
+          <div className="fixed top-0 right-0 h-full w-80 bg-white border-l shadow-2xl z-[10000] overflow-y-auto">
             <div className="flex items-center justify-between p-4 border-b">
               <div className="flex items-center gap-2">
                 <div className="text-xl">🐕</div>
@@ -77,7 +80,7 @@ export const MobileMenu = () => {
                     toggleMenu();
                   }}
                 >
-                  S\'inscrire
+                  S\"inscrire
                 </Button>
               </div>
             </nav>
