@@ -35,7 +35,8 @@ interface Pet {
 }
 
 const PetProfile = () => {
-  const [activeTab, setActiveTab] = useState("list");
+  const params = useParams();
+  const [activeTab, setActiveTab] = useState(params.action === 'add' || params.action === 'edit' ? 'form' : 'list');
   const [pets, setPets] = useState<Pet[]>([
     {
       id: "1",
@@ -66,7 +67,7 @@ const PetProfile = () => {
   ]);
 
   const [editingPet, setEditingPet] = useState<Pet | null>(null);
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(params.action === 'add' || params.action === 'edit');
 
   const [formData, setFormData] = useState<Pet>({
     id: "",
@@ -95,39 +96,13 @@ const PetProfile = () => {
   });
 
   const handleAddPet = () => {
-    setEditingPet(null);
-    setFormData({
-      id: "",
-      name: "",
-      type: "chien",
-      breed: "",
-      age: 0,
-      weight: 0,
-      medicalInfo: {
-        vaccinations: [],
-        treatments: [],
-        allergies: [],
-        lastVetVisit: "",
-      },
-      behavior: {
-        sociability: "sociable",
-        habits: [],
-        specialNeeds: [],
-      },
-      specificNeeds: {
-        diet: "",
-        medications: [],
-        exercises: "",
-        notes: "",
-      },
-    });
-    setShowForm(true);
+    // Redirection vers l'URL avec le paramètre 'add' pour gérer l'état
+    window.location.href = '/pet-profile/add';
   };
 
   const handleEditPet = (pet: Pet) => {
-    setEditingPet(pet);
-    setFormData(pet);
-    setShowForm(true);
+    // Redirection vers l'URL avec le paramètre 'edit' pour gérer l'état
+    window.location.href = `/pet-profile/edit/${pet.id}`;
   };
 
   const handleSavePet = () => {
