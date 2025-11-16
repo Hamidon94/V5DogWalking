@@ -20,7 +20,7 @@ import { toast } from "sonner";
 const Booking = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const sitterId = searchParams.get("sitter");
+  const promeneurId = searchParams.get("promeneur");
   const service = searchParams.get("service");
 
   const [formData, setFormData] = useState<BookingFormData>({
@@ -41,9 +41,9 @@ const Booking = () => {
   const [endDate, setEndDate] = useState<Date>();
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  // Mock sitter data
-  const sitter = {
-    id: sitterId || "1",
+  // Mock promeneur data
+  const promeneur = {
+    id: promeneurId || "1",
     name: "Marie Dubois",
     photo: "/placeholder.svg",
     rating: 4.9,
@@ -346,7 +346,7 @@ const Booking = () => {
 
           {/* Booking Summary */}
           <div className="space-y-6">
-            {/* Sitter Info */}
+            {/* Informations Promeneur */}
             <Card>
               <CardHeader>
                 <CardTitle>Votre promeneur certifié</CardTitle>
@@ -354,18 +354,18 @@ const Booking = () => {
               <CardContent>
                 <div className="flex items-center gap-4">
                   <Avatar className="w-16 h-16">
-                    <AvatarImage src={sitter.photo} alt={sitter.name} />
-                    <AvatarFallback>{sitter.name.charAt(0)}</AvatarFallback>
+                    <AvatarImage src={promeneur.photo} alt={promeneur.name} />
+                    <AvatarFallback>{promeneur.name.charAt(0)}</AvatarFallback>
                   </Avatar>
                   <div>
-                    <h3 className="font-medium">{sitter.name}</h3>
+                    <h3 className="font-medium">{promeneur.name}</h3>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      <span>{sitter.rating} ({sitter.reviewCount} avis)</span>
+                      <span>{promeneur.rating} ({promeneur.reviewCount} avis)</span>
                     </div>
                     <div className="flex items-center gap-1 text-sm text-muted-foreground">
                       <MapPin className="w-3 h-3" />
-                      <span>{sitter.location}</span>
+                      <span>{promeneur.location}</span>
                     </div>
                   </div>
                 </div>

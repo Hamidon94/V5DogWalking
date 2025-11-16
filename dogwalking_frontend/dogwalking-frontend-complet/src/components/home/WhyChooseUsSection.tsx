@@ -27,10 +27,10 @@ const WhyChooseUsSection = () => {
             </h3>
             <p className="text-gray-600 mb-4">
               Seule plateforme exigeant un casier judiciaire vierge B2 et une vérification d'identité 
-              obligatoire pour tous les promeneurs. Votre sécurité n'a pas de prix.
+              obligatoire pour tous les Promeneurs Certifiés. Votre sécurité n'a pas de prix.
             </p>
             <div className="text-sm text-dogwalking-blue font-semibold">
-              100% des promeneurs vérifiés
+              100% des Promeneurs Certifiés
             </div>
           </div>
 

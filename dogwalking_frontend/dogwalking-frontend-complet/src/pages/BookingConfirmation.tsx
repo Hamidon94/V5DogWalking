@@ -16,7 +16,7 @@ interface BookingDetails {
     type: string;
     breed: string;
   };
-  sitter: {
+  promeneur: {
     name: string;
     rating: number;
     location: string;
@@ -53,7 +53,7 @@ const BookingConfirmation = () => {
       type: "Chien",
       breed: "Golden Retriever",
     },
-    sitter: {
+    promeneur: {
       name: "Marie Dubois",
       rating: 4.9,
       location: "Paris 11ème",
@@ -102,9 +102,9 @@ Réservation pour: ${booking.pet.name} (${booking.pet.type} - ${booking.pet.bree
 
 PROMENEUR CERTIFIÉ
 -------------------
-Nom: ${booking.sitter.name}
-Localisation: ${booking.sitter.location}
-Note: ${booking.sitter.rating}/5
+Nom: ${booking.promeneur.name}
+Localisation: ${booking.promeneur.location}
+Note: ${booking.promeneur.rating}/5
 
 DÉTAILS DE LA RÉSERVATION
 --------------------------
@@ -184,9 +184,9 @@ Merci d'avoir choisi DogWalking!
                   <User className="w-6 h-6 text-purple-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">{booking.sitter.name}</h3>
+                  <h3 className="font-semibold">{booking.promeneur.name}</h3>
                   <p className="text-sm text-muted-foreground">
-                    ⭐ {booking.sitter.rating}/5 • {booking.sitter.location}
+                    ⭐ {booking.promeneur.rating}/5 • {booking.promeneur.location}
                   </p>
                 </div>
               </div>

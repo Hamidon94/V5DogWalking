@@ -16,8 +16,8 @@ interface Review {
 }
 
 interface ReviewSystemProps {
-  sitterId: string;
-  sitterName: string;
+  promeneurId: string;
+  promeneurName: string;
   averageRating: number;
   totalReviews: number;
   reviews: Review[];
@@ -25,8 +25,8 @@ interface ReviewSystemProps {
 }
 
 const ReviewSystem = ({
-  sitterId,
-  sitterName,
+  promeneurId,
+  promeneurName,
   averageRating,
   totalReviews,
   reviews,
@@ -144,7 +144,7 @@ const ReviewSystem = ({
       {showForm && (
         <Card>
           <CardHeader>
-            <CardTitle>Votre Avis sur {sitterName}</CardTitle>
+            <CardTitle>Votre Avis sur {promeneurName}</CardTitle>
             <CardDescription>Aidez d'autres propriétaires à faire leur choix</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">

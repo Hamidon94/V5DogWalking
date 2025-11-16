@@ -41,7 +41,7 @@ const Header = () => {
               to="/priority"
               className="text-gray-700 hover:text-dogwalking-green transition-colors"
             >
-              Être prioritaire
+              Tarifs
             </Link>
             
             <Link

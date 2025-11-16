@@ -23,11 +23,11 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
-import SitterDashboard from "./pages/SitterDashboard";
-import SitterProfile from "./pages/SitterProfile";
+import PromeneurDashboard from "./pages/PromeneurDashboard";
+import PromeneurProfile from "./pages/PromeneurProfile";
 import ProfileValidation from "./pages/ProfileValidation";
 import Booking from "./pages/Booking";
-import SitterOnboarding from "./pages/SitterOnboarding";
+import PromeneurOnboarding from "./pages/PromeneurOnboarding";
 import Careers from "./pages/Careers";
 import WalkTracking from "./pages/WalkTracking";
 import Blog from "./pages/Blog";
@@ -38,11 +38,11 @@ import ReviewSystem from "./components/ReviewSystem";
 import EarningsManagement from "./pages/EarningsManagement";
 import Messaging from "./pages/Messaging";
 import IdentityVerification from "./pages/IdentityVerification";
-import SitterDashboardComplete from "./pages/SitterDashboardComplete";
+import PromeneurDashboardComplete from "./pages/PromeneurDashboardComplete";
 import ServicePhotos from "./pages/ServicePhotos";
 import Notifications from "./pages/Notifications";
-import SitterPublicProfile from "./pages/SitterPublicProfile";
-import AdminDashboard from "./pages/AdminDashboard";
+import PromeneurPublicProfile from "./pages/PromeneurPublicProfile";
+
 
 const queryClient = new QueryClient();
 
@@ -56,7 +56,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/search" element={<Search />} />
-          <Route path="/become-sitter" element={<BecomeSitter />} />
+          <Route path="/devenir-promeneur" element={<BecomeSitter />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/dog-walking" element={<DogWalking />} />
           <Route path="/services/boarding" element={<Boarding />} />
@@ -66,11 +66,11 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/sitter-dashboard" element={<SitterDashboard />} />
-          <Route path="/sitter/:id" element={<SitterProfile />} />
+          <Route path="/promeneur-dashboard" element={<PromeneurDashboard />} />
+          <Route path="/promeneur/:id" element={<PromeneurProfile />} />
           <Route path="/profile-validation" element={<ProfileValidation />} />
           <Route path="/booking" element={<Booking />} />
-          <Route path="/sitter-onboarding" element={<SitterOnboarding />} />
+          <Route path="/promeneur-onboarding" element={<PromeneurOnboarding />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/walk-tracking/:bookingId" element={<WalkTracking />} />
           <Route path="/blog" element={<Blog />} />
@@ -82,11 +82,10 @@ const App = () => (
           <Route path="/earnings" element={<EarningsManagement />} />
           <Route path="/messaging" element={<Messaging />} />
           <Route path="/identity-verification" element={<IdentityVerification />} />
-          <Route path="/sitter-dashboard-complete" element={<SitterDashboardComplete />} />
+          <Route path="/promeneur-dashboard-complete" element={<PromeneurDashboardComplete />} />
           <Route path="/service-photos" element={<ServicePhotos />} />
           <Route path="/notifications" element={<Notifications />} />
-          <Route path="/sitter-profile/:id" element={<SitterPublicProfile />} />
-          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/promeneur-profile/:id" element={<PromeneurPublicProfile />} />
           <Route path="/safety" element={<Safety />} />
           <Route path="/help" element={<Help />} />
           <Route path="/contact" element={<Contact />} />

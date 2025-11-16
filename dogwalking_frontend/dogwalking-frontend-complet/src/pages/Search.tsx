@@ -23,7 +23,7 @@ const Search = () => {
   });
 
   // Mock data for demonstration
-  const mockSitters = [
+  const mockPromeneurs = [
     {
       id: 1,
       name: "Marie L.",
@@ -177,7 +177,7 @@ const Search = () => {
               </div>
 
               <div className="space-y-6">
-                {/* Star Sitters */}
+                {/* Promeneurs Star */}
                 <div>
                   <label className="flex items-center space-x-3">
                     <Checkbox 
@@ -186,7 +186,7 @@ const Search = () => {
                         setFilters(prev => ({ ...prev, onlyStarSitters: checked as boolean }))
                       }
                     />
-                    <span className="text-sm">Seulement les Star Sitters</span>
+                    <span className="text-sm">Seulement les Promeneurs Star</span>
                   </label>
                   <p className="text-xs text-gray-500 mt-1 ml-6">
                     Promeneur certifiés d'élite avec les meilleures notes
@@ -249,7 +249,7 @@ const Search = () => {
                   Promeneur certifiés près de vous
                 </h2>
                 <p className="text-gray-600">
-                  {mockSitters.length} promeneur certifiés trouvés
+                  {mockPromeneurs.length} promeneur certifiés trouvés
                 </p>
               </div>
 
@@ -274,21 +274,21 @@ const Search = () => {
 
             {/* Sitters Grid */}
             <div className={`grid gap-6 ${viewMode === "grid" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"}`}>
-              {mockSitters.map((sitter) => (
-                <div key={sitter.id} className="dogwalking-card p-6">
+              {mockPromeneurs.map((promeneur) => (
+                <div key={promeneur.id} className="dogwalking-card p-6">
                   {/* Header */}
                   <div className="flex items-start space-x-4 mb-4">
                     <img 
-                      src={sitter.profileImage} 
-                      alt={sitter.name}
+                      src={promeneur.profileImage} 
+                      alt={promeneur.name}
                       className="w-16 h-16 rounded-full object-cover"
                     />
                     <div className="flex-1">
                       <div className="flex items-center space-x-2 mb-1">
                         <h3 className="text-lg font-semibold text-gray-900">
-                          {sitter.name}
+                          {promeneur.name}
                         </h3>
-                        {sitter.isStarSitter && (
+                        {promeneur.isStarSitter && (
                           <span className="bg-dogwalking-orange text-white text-xs px-2 py-1 rounded-full font-medium">
                             STAR
                           </span>
@@ -297,23 +297,23 @@ const Search = () => {
                       
                       <div className="flex items-center space-x-2 mb-2">
                         <MapPin className="w-4 h-4 text-gray-400" />
-                        <span className="text-sm text-gray-600">{sitter.location}</span>
+                        <span className="text-sm text-gray-600">{promeneur.location}</span>
                       </div>
 
                       <div className="flex items-center space-x-2">
                         <div className="flex items-center space-x-1">
                           <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                          <span className="font-medium">{sitter.rating}</span>
+                          <span className="font-medium">{promeneur.rating}</span>
                         </div>
                         <span className="text-sm text-gray-500">
-                          ({sitter.reviewCount} avis)
+                          ({promeneur.reviewCount} avis)
                         </span>
                       </div>
                     </div>
 
                     <div className="text-right">
                       <div className="text-2xl font-bold text-dogwalking-green">
-                        {sitter.price}€
+                        {promeneur.price}€
                       </div>
                       <div className="text-sm text-gray-500">par nuit</div>
                     </div>
@@ -321,12 +321,12 @@ const Search = () => {
 
                   {/* About */}
                   <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                    {sitter.about}
+                    {promeneur.about}
                   </p>
 
                   {/* Services */}
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {sitter.services.map((service, index) => (
+                    {promeneur.services.map((service, index) => (
                       <span 
                         key={index}
                         className="bg-dogwalking-green/10 text-dogwalking-green text-xs px-2 py-1 rounded-full"
@@ -338,7 +338,7 @@ const Search = () => {
 
                   {/* Features */}
                   <div className="space-y-1 mb-4">
-                    {sitter.features.slice(0, 2).map((feature, index) => (
+                    {promeneur.features.slice(0, 2).map((feature, index) => (
                       <div key={index} className="flex items-center space-x-2">
                         <div className="w-1.5 h-1.5 bg-dogwalking-green rounded-full"></div>
                         <span className="text-sm text-gray-600">{feature}</span>
@@ -348,8 +348,8 @@ const Search = () => {
 
                   {/* Stats */}
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-6">
-                    <span>{sitter.yearsExperience} ans d'expérience</span>
-                    <span>Répond en {sitter.responseTime}</span>
+                    <span>{promeneur.yearsExperience} ans d'expérience</span>
+                    <span>Répond en {promeneur.responseTime}</span>
                   </div>
 
                   {/* Actions */}

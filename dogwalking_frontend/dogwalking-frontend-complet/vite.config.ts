@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "0.0.0.0",
     port: 8080,
     middlewareMode: false,
+    allowedHosts: ["8080-it6c4h0y11xzqk3z9ul2z-a8fd5def.manusvm.computer"],
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   define: {

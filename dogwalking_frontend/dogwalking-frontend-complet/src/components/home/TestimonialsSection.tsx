@@ -7,7 +7,7 @@ const TestimonialsSection = () => {
       name: "Sarah M.",
       location: "Paris, France",
       rating: 5,
-      text: "DogWalking a changé ma vie ! Je peux maintenant voyager l'esprit tranquille en sachant que mon chien Max est entre de bonnes mains. Les promeneur certifiés sont incroyables !",
+      text: "DogWalking a changé ma vie ! Je peux maintenant voyager l'esprit tranquille en sachant que mon chien Max est entre de bonnes mains. Les Promeneurs Certifiés sont incroyables !",
       petName: "Max",
       petType: "Golden Retriever"
     },
@@ -16,7 +16,7 @@ const TestimonialsSection = () => {
       name: "Pierre L.",
       location: "Lyon, France",
       rating: 5,
-      text: "Excellent service ! La communication avec le promeneur certifié était parfaite, et j'ai reçu des photos de Luna tous les jours. Je recommande vivement !",
+      text: "Excellent service ! La communication avec le Promeneur Certifié était parfaite, et j'ai reçu des photos de Luna tous les jours. Je recommande vivement !",
       petName: "Luna",
       petType: "Chat Persan"
     },
@@ -25,7 +25,7 @@ const TestimonialsSection = () => {
       name: "Marie C.",
       location: "Marseille, France",
       rating: 5,
-      text: "Grâce à DogWalking, j'ai trouvé le promeneur parfait pour mon bouledogue. Charlie adore ses promenades quotidiennes et revient toujours fatigué et heureux !",
+      text: "Grâce à DogWalking, j'ai trouvé le Promeneur parfait pour mon bouledogue. Charlie adore ses promenades quotidiennes et revient toujours fatigué et heureux !",
       petName: "Charlie",
       petType: "Bouledogue Français"
     },
@@ -34,7 +34,7 @@ const TestimonialsSection = () => {
       name: "Antoine R.",
       location: "Toulouse, France",
       rating: 5,
-      text: "Service exceptionnel ! Le promeneur certifié a pris soin de mes deux chats comme s'ils étaient les siens. Interface facile à utiliser et réservation simple.",
+      text: "Service exceptionnel ! Le Promeneur Certifié a pris soin de mes deux chats comme s'ils étaient les siens. Interface facile à utiliser et réservation simple.",
       petName: "Milo & Simba",
       petType: "Chats domestiques"
     }

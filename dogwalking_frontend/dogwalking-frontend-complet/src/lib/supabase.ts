@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 
 // Supabase configuration
-const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL || 'https://your-supabase-url.supabase.co';
-const SUPABASE_ANON_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY || 'your-anon-key';
+const SUPABASE_URL = import.meta.env.REACT_APP_SUPABASE_URL || 'https://your-supabase-url.supabase.co';
+const SUPABASE_ANON_KEY = import.meta.env.REACT_APP_SUPABASE_ANON_KEY || 'your-anon-key';
 
 // Create Supabase client
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -17,7 +17,7 @@ export type Database = {
           email: string;
           first_name: string;
           last_name: string;
-          role: 'OWNER' | 'SITTER' | 'ADMIN';
+          role: 'OWNER' | 'PROMENEUR';
           phone: string | null;
           avatar_url: string | null;
           bio: string | null;
@@ -63,7 +63,7 @@ export type Database = {
           id: string;
           booking_number: string;
           owner_id: string;
-          sitter_id: string;
+          promeneur_id: string;
           pet_id: string;
           service_type: string;
           start_date: string;
@@ -129,7 +129,7 @@ export type Database = {
           id: string;
           booking_id: string;
           author_id: string;
-          sitter_id: string;
+          promeneur_id: string;
           rating: number;
           comment: string;
           photo_urls: string[];
@@ -143,7 +143,7 @@ export type Database = {
       earnings: {
         Row: {
           id: string;
-          sitter_id: string;
+          promeneur_id: string;
           booking_id: string | null;
           amount: number;
           type: 'SERVICE' | 'TIP' | 'REFUND' | 'WITHDRAWAL';
@@ -184,7 +184,7 @@ export type Database = {
       availability: {
         Row: {
           id: string;
-          sitter_id: string;
+          promeneur_id: string;
           day_of_week: number;
           start_time: string;
           end_time: string;

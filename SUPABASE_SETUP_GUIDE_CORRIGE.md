@@ -1,6 +1,6 @@
-# 📚 Guide de Configuration Supabase - DogWalking
+# 📚 Guide de Configuration Supabase - DogWalking (Corrigé)
 
-Ce guide vous explique comment configurer Supabase pour le projet DogWalking.
+Ce guide vous explique comment configurer Supabase pour le projet DogWalking, avec la terminologie mise à jour pour correspondre au frontend.
 
 ---
 
@@ -17,7 +17,7 @@ Ce guide vous explique comment configurer Supabase pour le projet DogWalking.
 
 ---
 
-## 🗄️ Étape 2 : Créer les Tables
+## 🗄️ Étape 2 : Créer les Tables (Terminologie PROMENEUR)
 
 Accédez à **SQL Editor** dans Supabase Studio et exécutez le script SQL suivant :
 
@@ -293,4 +293,3 @@ testConnection();
 **Créé par** : Manus AI  
 **Date** : 22 Octobre 2024  
 **Version** : 1.0.0
-
