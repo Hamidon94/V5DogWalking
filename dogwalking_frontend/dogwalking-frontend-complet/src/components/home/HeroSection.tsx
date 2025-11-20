@@ -44,10 +44,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right side - Search Form */}
-          <div className="flex-1 w-full max-w-lg">
-            <SearchForm className="bg-white/95 backdrop-blur-sm" />
-          </div>
+
         </div>
       </div>
     </section>
